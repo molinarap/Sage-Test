@@ -1,9 +1,14 @@
 quizApp.controller('quizCtrl', function($scope, $http, $log, $state) {
 
+    $scope.showSix = false;
     $scope.showSeven = false;
     $scope.showEight = false;
     $scope.showNine = false;
     $scope.showTen = false;
+
+    $scope.showTest6_7 = function() {
+        $scope.showSix = true;
+    }
 
     $scope.showTest7 = function() {
         $scope.showSeven = true;

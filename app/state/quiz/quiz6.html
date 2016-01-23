@@ -1,6 +1,8 @@
 <md-content class="md-padding">
     <div layout="column" layout-align="center center">
         <img src="/static/images/reme.png">
-        <p>A fine test ricordati di scrivere la frase "Ho finito"</p>
+        <p>A fine test ricordati di scrivere la frase <b>"Ho finito"</b></p>
+        <md-button class="md-raised md-primary" ng-if="!showSix" ng-click="showTest6_7()">Me ne ricordero</md-button>
+        <md-button ng-disabled="showSix" ng-if="showSix" class="md-primary">Procedi alla domanda 7</md-button>
     </div>
 </md-content>
