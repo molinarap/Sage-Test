@@ -16,4 +16,4 @@ Il test, che può sostituire comunque una accurata diagnosi medica, si è rivela
  - git clone della repo ....../molinarap/Sage-Test.git
  - entrare nella cartella Sage-Test
  - eseguire **npm install**
- - far partire l'app con il comando **node app.js**
+ - far partire l'app con il comando **gulp**
