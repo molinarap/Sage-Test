@@ -7,23 +7,23 @@
             </div>
         </md-toolbar>
         <md-content class="md-padding" style="text-align: center;">
-            <div class="page-container">
+            <div class="page-container container-quiz">
                 <div class="page" ng-if="point">
-                    <img ng-if="point" src="/static/images/poor.png">
-                    <img ng-if="!point" src="/static/images/doctor.png">
-                    <img ng-if="!point"src="/static/images/good.png">
+                    <img ng-if="point && (point<=15 && point>10)" src="/static/images/poor.png">
+                    <img ng-if="point && (point<=10 && point>5)" src="/static/images/doctor.png">
+                    <img ng-if="point && (point<=5 && point>1)" src="/static/images/good.png">
                     <h1>Risultato</h1>
                     <p>Ha totalizzato: {{ point }}</p>
-                    <div ng-if="point">
-                        <h3>Punteggio tra 17 e 22</h3>
+                    <div ng-if="point && (point<=15 && point>10)">
+                        <h3>Punteggio tra 15 e 10</h3>
                         <p>Non c’è nulla di cui preoccuparsi, le vostre capacità cognitive sono “normali” e non avete bisogno di altri controlli medici</p>
                     </div>
-                    <div ng-if="point">
-                        <h3>Punteggio tra 17 e 22</h3>
+                    <div ng-if="point && (point<=10 && point>5)">
+                        <h3>Punteggio tra 10 e 5</h3>
                         <p>Avete dei piccoli problemi di memoria o di elaborazione del pensiero. Per una valutazione più approfondita si consiglia di rivolgersi al proprio medico curante</p>
                     </div>
-                    <div ng-if="point">
-                        <h3>Punteggio tra 17 e 22</h3>
+                    <div ng-if="point && (point<=5 && point>1)">
+                        <h3>Punteggio tra 5 e 1</h3>
                         <p>Se avete un punteggio inferiore a 14 è molto probabile che possiate avere dei seri segni di declino cognitivo e la valutazione di un medico è fortemente raccomandata</p>
                     </div>
                     <md-button class="md-primary" ui-sref="test">Ripeti il test</md-button>
