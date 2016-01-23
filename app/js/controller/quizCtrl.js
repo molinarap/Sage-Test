@@ -42,23 +42,23 @@ quizApp.controller('quizCtrl', function($scope, $http, $log, $state) {
         //quiz 1
 
         //quiz 2
-        var img1 = quizs.quiz2.img1;
-        var img2 = quizs.quiz2.img2;
+        var img1 = quizs.quiz2.img1.toUpperCase();
+        var img2 = quizs.quiz2.img2.toUpperCase();
 
-        if (img1 === "rinoceronte") {
+        if (img1 === "RINOCERONTE") {
             point = point + 1;
             $log.info('quiz2.img1', point);
         }
-        if (img2 === "arpa") {
+        if (img2 === "ARPA") {
             point = point + 1;
             $log.info('quiz2.img2', point);
         }
         //quiz 2
 
         //quiz 3
-        var quiz3 = quizs.quiz3;
+        var quiz3 = quizs.quiz3.toUpperCase();
 
-        if (quiz3 === "fiori") {
+        if (quiz3 === "FIORI") {
             point = point + 2;
             $log.info('quiz3', point);
         }
@@ -76,7 +76,7 @@ quizApp.controller('quizCtrl', function($scope, $http, $log, $state) {
         //quiz 5
         var quiz5 = quizs.quiz5;
 
-        if (quiz5 === "6.95") {
+        if (quiz5 === "6.95" || quiz5 === "6,95") {
             point = point + 1;
             $log.info('quiz5', point);
         }
@@ -119,9 +119,9 @@ quizApp.controller('quizCtrl', function($scope, $http, $log, $state) {
         //quiz 10
 
         //quiz 11
-        var quiz11 = quizs.quiz11;
+        var quiz11 = quizs.quiz11.toUpperCase();
 
-        if (quiz11 === "Ho finito") {
+        if (quiz11 === "HO FINITO") {
             point = point + 1;
             $log.info('quiz11', point);
         }
