@@ -1,0 +1,25 @@
+<md-content class="md-padding">
+    <div layout="column" layout-align="center center">
+        <img src="/static/images/img.png">
+        <p>Inserisci il nome degli oggetti presenti nelle due immagini</p>
+    </div>
+    <md-divider class="margin-divider"></md-divider>
+    <div layout-gt-sm="row">
+        <md-container class="md-block" flex-gt-sm style="text-align: -webkit-center;">
+            <img style="width: 40%;" src="http://gds.it.cdn-immedia.net/2015/01/Rinoceronte-2.jpg">
+        </md-container>
+        <md-container class="md-block" flex-gt-sm style="text-align: -webkit-center;">
+            <img style="width: 30%" src="http://www.stadionaste.it/foto/22/22161-1.jpg">
+        </md-container>
+    </div>
+    <div layout-gt-sm="row">
+        <md-input-container class="md-block" flex-gt-sm>
+            <label>Immagine 1</label>
+            <input ng-model="quizs.quiz2.img1">
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-sm>
+            <label>Immagine 2</label>
+            <input ng-model="quizs.quiz2.img2">
+        </md-input-container>
+    </div>
+</md-content>

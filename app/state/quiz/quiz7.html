@@ -1,0 +1,55 @@
+<md-content class="md-padding">
+    <div layout="column" layout-align="center center">
+        <img src="/static/images/clock.png">
+        <p>Prendi carta e penna e disegna</p>
+    </div>
+    <md-divider class="margin-divider"></md-divider>
+    <div layout-gt-sm="row">
+        <md-container class="md-block" flex-gt-sm>
+            <div>
+                <md-list>
+                    <md-list-item class="md-3-line">
+                        <img ng-src="/static/images/1.png" class="md-avatar" />
+                        <div class="md-list-item-text" layout="column">
+                            <h3>Disegna un quadrante di un orologio</h3>
+                        </div>
+                    </md-list-item>
+                    <md-list-item class="md-3-line">
+                        <img ng-src="/static/images/2.png" class="md-avatar" />
+                        <div class="md-list-item-text" layout="column">
+                            <h3>Metti in maniera precisa i numeri che rappresentano le ore sull'orologio</h3>
+                        </div>
+                    </md-list-item>
+                    <md-list-item class="md-3-line">
+                        <img ng-src="/static/images/3.png" class="md-avatar" />
+                        <div class="md-list-item-text" layout="column">
+                            <h3>Disegna le lancette che indicano le ore 11:50</h3>
+                        </div>
+                    </md-list-item>
+                    <md-list-item class="md-3-line">
+                        <img ng-src="/static/images/4.png" class="md-avatar" />
+                        <div class="md-list-item-text" layout="column">
+                            <h3>Distingui la lancetta dei minuti(più lunga) da quella delle ore(più corta)</h3>
+                        </div>
+                    </md-list-item>
+                </md-list>
+            </div>
+        </md-container>
+        <md-container class="md-block" flex-gt-sm ng-show="!showSeven">
+            <p> Disegna su un foglio quello che ti è stato chiesto e clicca sul pulsante qui sotto per confrontare il tuo disegno e scegliere una risposta</p>
+            <md-button class="md-raised md-primary" ng-click="showTest7()">Fatto</md-button>
+        </md-container>
+        <md-container class="md-block" flex-gt-sm ng-show="showSeven">
+            <md-container class="md-block" flex-gt-sm>
+                <img style="width: 200px;" src="/static/images/prova.png">
+            </md-container>
+            <md-radio-group ng-model="quizs.quiz7">
+                <md-radio-button value="2">Hai disegnato bene 4 punti su 4</md-radio-button>
+                <md-radio-button value="1">Hai disegnato bene 3 punti su 4</md-radio-button>
+                <md-radio-button value="0">Hai sbagliato a fare il disegno (più di due istruzioni)</md-radio-button>
+            </md-radio-group>
+            <!--<img src="/static/images/prova.png">-->
+        </md-container>
+    </div>
+    <!--<md-divider class="margin-divider"></md-divider>-->
+</md-content>

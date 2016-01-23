@@ -1,0 +1,20 @@
+<md-content class="md-padding">
+    <div layout="column" layout-align="center center">
+        <img src="/static/images/natio.png">
+        <p>Scrivi il nome di 12 nazioni sparse nel mondo e poi clicca fatto</p>
+    </div>
+    <md-divider class="margin-divider"></md-divider>
+    <div layout-gt-sm="row">
+        <md-container class="md-block" flex-gt-sm>
+            <md-button class="md-raised md-primary" ng-click="showTest8()" ng-show="!showEight">Fatto</md-button>
+            <md-container class="md-block" flex-gt-sm ng-show="showEight">
+                <md-radio-group ng-model="quizs.quiz8">
+                    <md-radio-button value="1">Ne hai scritte 12, quindi tutte</md-radio-button>
+                    <md-radio-button value="2">Ne hai scritte 10 o 11</md-radio-button>
+                    <md-radio-button value="0">Ne hai scritte 9 o meno</md-radio-button>
+                </md-radio-group>
+            </md-container>
+        </md-container>
+    </div>
+    <!--<md-divider class="margin-divider"></md-divider>-->
+</md-content>

@@ -2,185 +2,43 @@
     <div ng-controller="quizCtrl">
         <md-toolbar md-scroll-shrink ng-if="true">
             <div class="md-toolbar-tools">
+                <img style="margin-right: 5px;" src="/static/images/favicon.png">
                 <h3><span>Sage Test</span></h3>
             </div>
         </md-toolbar>
         <md-tabs md-dynamic-height md-border-bottom>
             <md-tab label="Domanda 1">
-                <md-content class="md-padding">
-                    <p>Inserisci a memoria la data di oggi qui sotto</p>
-                    <md-input-container class="md-block" flex-gt-sm>
-                        <label>Scrivi qui la risposta</label>
-                        <input ng-model="quizs.quiz1" type="date">
-                    </md-input-container>
-                </md-content>
+                <div class="tab-container" ng-include="'/state/quiz/quiz1.html'"></div>
             </md-tab>
-            <md-tab label="Domanda 2">
-                <md-content class="md-padding">
-                    <div layout-gt-sm="row">
-                        <md-container class="md-block" flex-gt-sm>
-                            <img style="width: 200px;" src="/static/images/prova.png">
-                        </md-container>
-                        <md-container class="md-block" flex-gt-sm>
-                            <img style="width: 200px;" src="/static/images/prova.png">
-                        </md-container>
-                    </div>
-                    <div layout-gt-sm="row">
-                        <md-input-container class="md-block" flex-gt-sm>
-                            <label>Immagine 1</label>
-                            <input ng-model="quizs.quiz2.img1">
-                        </md-input-container>
-                        <md-input-container class="md-block" flex-gt-sm>
-                            <label>Immagine 2</label>
-                            <input ng-model="quizs.quiz2.img2">
-                        </md-input-container>
-                    </div>
-                </md-content>
+            <md-tab label="Domanda 2" ng-disabled="!quizs.quiz1">
+                <div class="tab-container" ng-include="'/state/quiz/quiz2.html'"></div>
             </md-tab>
-            <md-tab label="Domanda 3">
-                <md-content class="md-padding">
-                    <p>Cosa sono rose e tulipani? Entrambi sono...</p>
-                    <md-input-container class="md-block" flex-gt-sm>
-                        <label>Scrivi qui la risposta</label>
-                        <input ng-model="quizs.quiz3">
-                    </md-input-container>
-                </md-content>
+            <md-tab label="Domanda 3" ng-disabled="!quizs.quiz2.img1 || !quizs.quiz2.img2">
+                <div class="tab-container" ng-include="'/state/quiz/quiz3.html'"></div>
             </md-tab>
-            <md-tab label="Domanda 4">
-                <md-content class="md-padding">
-                    <p>Quante monete da 20 centesimi ci sono in 6.40€?</p>
-                    <md-input-container class="md-block" flex-gt-sm>
-                        <label>Scrivi qui la risposta</label>
-                        <input ng-model="quizs.quiz4">
-                    </md-input-container>
-                </md-content>
+            <md-tab label="Domanda 4" ng-disabled="!quizs.quiz3">
+                <div class="tab-container" ng-include="'/state/quiz/quiz4.html'"></div>
             </md-tab>
-            <md-tab label="Domanda 5">
-                <md-content class="md-padding">
-                    <p>Fai la spesa e spendi 3.05€. Se paghi con una banconota da 10€ quanto resto riceverai?</p>
-                    <md-input-container class="md-block" flex-gt-sm>
-                        <label>Scrivi qui la risposta</label>
-                        <input ng-model="quizs.quiz5">
-                    </md-input-container>
-                </md-content>
+            <md-tab label="Domanda 5" ng-disabled="!quizs.quiz4">
+                <div class="tab-container" ng-include="'/state/quiz/quiz5.html'"></div>
             </md-tab>
-            <md-tab label="Domanda 6">
-                <md-content class="md-padding">
-                    <p>A fine test ricordati di scrivere la frase "Ho finito"</p>
-                </md-content>
+            <md-tab label="Domanda 6" ng-disabled="!quizs.quiz5">
+                <div class="tab-container" ng-include="'/state/quiz/quiz6.html'"></div>
             </md-tab>
-            <md-tab label="Domanda 7">
-                <md-content class="md-padding">
-                    <div layout-gt-sm="row">
-                        <md-container class="md-block" flex-gt-sm>
-                            <div>
-                                <md-list>
-                                    <md-list-item class="md-3-line">
-                                        <img ng-src="/static/images/maker.png" class="md-avatar" />
-                                        <div class="md-list-item-text" layout="column">
-                                            <h3>Disegna un quadrante di un orologio</h3>
-                                        </div>
-                                    </md-list-item>
-                                    <md-list-item class="md-3-line">
-                                        <img ng-src="/static/images/maker.png" class="md-avatar" />
-                                        <div class="md-list-item-text" layout="column">
-                                            <h3>Metti in maniera precisa i numeri che rappresentano le ore sull'orologio</h3>
-                                        </div>
-                                    </md-list-item>
-                                    <md-list-item class="md-3-line">
-                                        <img ng-src="/static/images/maker.png" class="md-avatar" />
-                                        <div class="md-list-item-text" layout="column">
-                                            <h3>Disegna le lancette che indicano le ore 11:50</h3>
-                                        </div>
-                                    </md-list-item>
-                                    <md-list-item class="md-3-line">
-                                        <img ng-src="/static/images/maker.png" class="md-avatar" />
-                                        <div class="md-list-item-text" layout="column">
-                                            <h3>Distingui la lancetta dei minuti(più lunga) da quella delle ore(più corta)</h3>
-                                        </div>
-                                    </md-list-item>
-                                </md-list>
-                            </div>
-                        </md-container>
-                        <md-container class="md-block" flex-gt-sm ng-show="!showSeven">
-                            <p> Disegna su un foglio quello che ti è stato chiesto e clicca sul pulsante qui sotto per confrontare il tuo disegno e scegliere una risposta</p>
-                            <md-button class="md-raised md-primary" ng-click="showTest7()">Fatto</md-button>
-                        </md-container>
-                        <md-container class="md-block" flex-gt-sm ng-show="showSeven">
-                            <md-container class="md-block" flex-gt-sm>
-                                <img style="width: 200px;" src="/static/images/prova.png">
-                            </md-container>
-                            <md-radio-group ng-model="quizs.quiz7">
-                                <md-radio-button value="2">Hai disegnato bene 4 punti su 4</md-radio-button>
-                                <md-radio-button value="1">Hai disegnato bene 3 punti su 4</md-radio-button>
-                                <md-radio-button value="0">Hai sbagliato a fare il disegno (più di due istruzioni)</md-radio-button>
-                            </md-radio-group>
-                            <!--<img src="/static/images/prova.png">-->
-                        </md-container>
-                    </div>
-                    <!--<md-divider></md-divider>-->
-                </md-content>
+            <md-tab label="Domanda 7" ng-disabled="!quizs.quiz5">
+                <div class="tab-container" ng-include="'/state/quiz/quiz7.html'"></div>
             </md-tab>
-            <md-tab label="Domanda 8">
-                <md-content class="md-padding">
-                    <div layout-gt-sm="row">
-                        <md-container class="md-block" flex-gt-sm>
-                            <p>Scrivi il nome di 12 nazioni sparse nel mondo e poi clicca fatto</p>
-                            <md-button class="md-raised md-primary" ng-click="showTest8()" ng-show="!showEight">Fatto</md-button>
-                            <md-container class="md-block" flex-gt-sm ng-show="showEight">
-                                <md-radio-group ng-model="quizs.quiz8">
-                                    <md-radio-button value="1">Ne hai scritte 12, quindi tutte</md-radio-button>
-                                    <md-radio-button value="2">Ne hai scritte 10 o 11</md-radio-button>
-                                    <md-radio-button value="0">Ne hai scritte 9 o meno</md-radio-button>
-                                </md-radio-group>
-                            </md-container>
-                        </md-container>
-                    </div>
-                    <!--<md-divider></md-divider>-->
-                </md-content>
+            <md-tab label="Domanda 8" ng-disabled="!quizs.quiz7">
+                <div class="tab-container" ng-include="'/state/quiz/quiz8.html'"></div>
             </md-tab>
-            <md-tab label="Domanda 9">
-                <md-content class="md-padding">
-                    <p>Collega tutti i nodi della figura sotostante alternando numeri e lettere (es. 1-A-2-B ecc). Quando hai finito clicca "fatto" e controlla se hai fatto tutto giusto</p>
-                    <div ng-show="!showNine">
-                        <img style="width: 200px;" ng-src="/static/images/prova.png">
-                        <md-button class="md-raised md-primary" ng-click="showTest9()">Fatto</md-button>
-                    </div>
-                </md-content>
-                <md-container class="md-block" flex-gt-sm ng-show="showNine">
-                    <img style="width: 200px;" ng-src="/static/images/prova.png">
-                    <md-radio-group ng-model="quizs.quiz9">
-                        <md-radio-button value="1">Sequenza corretta</md-radio-button>
-                        <md-radio-button value="2">1 o 2 errori</md-radio-button>
-                        <md-radio-button value="0">piu' di 2 errori</md-radio-button>
-                    </md-radio-group>
-                </md-container>
+            <md-tab label="Domanda 9" ng-disabled="!quizs.quiz8">
+                <div class="tab-container" ng-include="'/state/quiz/quiz9.html'"></div>
             </md-tab>
-            <md-tab label="Domanda 10">
-                <md-content class="md-padding">
-                    <p>La figura sottostante contiene 5 quadrati: elimina 3 linee per creare una figura che contenga 4 quadrati. Poi clicca "fatto" per controllare che hai eliminato le linee corrette</p>
-                    <div ng-show="!showTen">
-                        <img style="width: 200px;" ng-src="/static/images/prova.png">
-                        <md-button class="md-raised md-primary" ng-click="showTest10()">Fatto</md-button>
-                    </div>
-                </md-content>
-                <md-container class="md-block" flex-gt-sm ng-show="showTen">
-                    <img style="width: 200px;" ng-src="/static/images/prova.png">
-                    <md-radio-group ng-model="quizs.quiz10">
-                        <md-radio-button value="2">Hai fatto bene il disegno</md-radio-button>
-                        <md-radio-button value="0">Hai sbagliato il disegno</md-radio-button>
-                    </md-radio-group>
-                </md-container>
+            <md-tab label="Domanda 10" ng-disabled="!quizs.quiz9">
+                <div class="tab-container" ng-include="'/state/quiz/quiz10.html'"></div>
             </md-tab>
-            <md-tab label="Domanda 11">
-                <md-content class="md-padding">
-                    <p>Hai finito?</p>
-                    <md-input-container class="md-block" flex-gt-sm>
-                        <label>Scrivi qui la risposta</label>
-                        <input ng-model="quizs.quiz11">
-                    </md-input-container>
-                    <md-button class="md-raised md-primary" ng-click="check()">Calcola il risultato del test</md-button>
-                </md-content>
+            <md-tab label="Domanda 11" ng-disabled="!quizs.quiz10">
+                <div class="tab-container" ng-include="'/state/quiz/quiz11.html'"></div>
             </md-tab>
             <md-tab label="Domanda 11">
                 <md-content class="md-padding">

@@ -1,0 +1,19 @@
+<md-content class="md-padding">
+    <div layout="column" layout-align="center center">
+        <img src="/static/images/diagr.png">
+        <p>Collega tutti i nodi della figura sotostante alternando numeri e lettere (es. 1-A-2-B ecc). Quando hai finito clicca "fatto" e controlla se hai fatto tutto giusto</p>
+    </div>
+    <md-divider class="margin-divider"></md-divider>
+    <div ng-show="!showNine">
+        <img style="width: 200px;" ng-src="/static/images/prova.png">
+        <md-button class="md-raised md-primary" ng-click="showTest9()">Fatto</md-button>
+    </div>
+</md-content>
+<md-container class="md-block" flex-gt-sm ng-show="showNine">
+    <img style="width: 200px;" ng-src="/static/images/prova.png">
+    <md-radio-group ng-model="quizs.quiz9">
+        <md-radio-button value="1">Sequenza corretta</md-radio-button>
+        <md-radio-button value="2">1 o 2 errori</md-radio-button>
+        <md-radio-button value="0">piu' di 2 errori</md-radio-button>
+    </md-radio-group>
+</md-container>

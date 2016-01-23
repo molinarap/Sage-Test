@@ -2,12 +2,16 @@
     <div ng-controller="resultCtrl">
         <md-toolbar md-scroll-shrink ng-if="true">
             <div class="md-toolbar-tools">
+                <img style="margin-right: 5px;" src="/static/images/favicon.png">
                 <h3><span>Sage Test</span></h3>
             </div>
         </md-toolbar>
-        <md-content class="md-padding">
+        <md-content class="md-padding" style="text-align: center;">
             <div class="page-container">
                 <div class="page" ng-if="point">
+                    <img ng-if="point" src="/static/images/poor.png">
+                    <img ng-if="!point" src="/static/images/doctor.png">
+                    <img ng-if="!point"src="/static/images/good.png">
                     <h1>Risultato</h1>
                     <p>Ha totalizzato: {{ point }}</p>
                     <div ng-if="point">
@@ -22,9 +26,10 @@
                         <h3>Punteggio tra 17 e 22</h3>
                         <p>Se avete un punteggio inferiore a 14 è molto probabile che possiate avere dei seri segni di declino cognitivo e la valutazione di un medico è fortemente raccomandata</p>
                     </div>
-                    <md-button class="md-primary" ui-sref="test">Inizia il test</md-button>
+                    <md-button class="md-primary" ui-sref="test">Ripeti il test</md-button>
                 </div>
                 <div class="page" ng-if="!point">
+                    <img src="/static/images/wrong.png">
                     <h1>Esegui il test per ottenere i risultati</h1>
                     <md-button class="md-primary" ui-sref="test">Inizia il test</md-button>
                 </div>
