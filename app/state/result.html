@@ -9,9 +9,9 @@
         <md-content class="md-padding" style="text-align: center;">
             <div class="page-container container-quiz">
                 <div class="page" ng-if="point">
-                    <img ng-if="point && (point<=15 && point>10)" src="/static/images/poor.png">
+                    <img ng-if="point && (point<=15 && point>10)" src="/static/images/good.png">
                     <img ng-if="point && (point<=10 && point>5)" src="/static/images/doctor.png">
-                    <img ng-if="point && (point<=5 && point>1)" src="/static/images/good.png">
+                    <img ng-if="point && (point<=5 && point>1)" src="/static/images/poor.png">
                     <h1>Risultato</h1>
                     <p><b>Ha totalizzato: {{ point }}</b></p>
                     <div ng-if="point && (point<=15 && point>10)">
