@@ -12,7 +12,7 @@ Il test, che può sostituire comunque una accurata diagnosi medica, si è rivela
  - Angular-Material
 
 **Come farlo partire**:
-
+ - installare Gulp a livello globale con **sudo npm install -g gulp**
  - git clone della repo ....../molinarap/Sage-Test.git
  - entrare nella cartella Sage-Test
  - eseguire **npm install**
