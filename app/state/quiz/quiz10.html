@@ -1,18 +1,18 @@
 <md-content class="md-padding">
     <div layout="column" layout-align="center center">
         <img src="/static/images/square.png">
-        <p>La figura sottostante contiene 5 quadrati: elimina 3 linee per creare una figura che contenga 4 quadrati. Poi clicca "fatto" per controllare che hai eliminato le linee corrette</p>
+        <p>La figura sottostante contiene 5 quadrati: elimina 3 linee per creare una figura quadrata che contenga 4 quadrati. Poi clicca "fatto" per controllare che hai eliminato le linee corrette</p>
     </div>
     <md-divider class="margin-divider"></md-divider>
-    <div ng-show="!showTen">
-        <img style="width: 200px;" ng-src="/static/images/prova.png">
-        <md-button class="md-raised md-primary" ng-click="showTest10()">Fatto</md-button>
+    <div ng-show="!showTen" style="margin: auto 26%;text-align: -webkit-center;">
+        <img style="width: 200px;" ng-src="/static/images/img10B.png">
+        <md-button class="md-raised md-primary" ng-click="showTest10()" style="margin: 15px 42%;">Fatto</md-button>
     </div>
 </md-content>
-<md-container class="md-block" flex-gt-sm ng-show="showTen">
-    <img style="width: 200px;" ng-src="/static/images/prova.png">
+<md-container class="md-block" flex-gt-sm ng-show="showTen" style="text-align: -webkit-center;margin: auto 43%;">
+    <img style="width: 200px;" ng-src="/static/images/img10A.png">
     <md-radio-group ng-model="quizs.quiz10">
-        <md-radio-button value="2">Hai fatto bene il disegno</md-radio-button>
-        <md-radio-button value="0">Hai sbagliato il disegno</md-radio-button>
+        <md-radio-button value="2" style="margin: 15px 43%;">Hai fatto bene il disegno</md-radio-button>
+        <md-radio-button value="0"style="margin: 15px 43%;">Hai sbagliato il disegno</md-radio-button>
     </md-radio-group>
 </md-container>
